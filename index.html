@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Good Jobs SRLS — Servizi operativi per aziende | Piacenza</title>
+<meta name="description" content="Good Jobs SRLS: manodopera e servizi operativi per aziende a Piacenza. Attività agricole conto terzi, facchinaggio, movimentazione merci, pulizia aree agricole, supporto logistico e distribuzione materiale pubblicitario." />
+<meta name="theme-color" content="#0e3b2c" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --green-900:#0a2d22;
+  --green-800:#0e3b2c;
+  --green-700:#11503d;
+  --green-500:#1f8a5b;
+  --lime:#34e08a;
+  --lime-soft:#9af0c0;
+  --cream:#f7f6f0;
+  --cream-2:#efede3;
+  --ink:#14201b;
+  --muted:#5d6b63;
+  --white:#ffffff;
+  --radius:22px;
+  --shadow:0 18px 50px -20px rgba(10,45,34,.35);
+  --shadow-sm:0 8px 24px -12px rgba(10,45,34,.28);
+  --maxw:1180px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  color:var(--ink);
+  background:var(--cream);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+h1,h2,h3,.font-display{font-family:'Space Grotesk','Inter',sans-serif;letter-spacing:-.02em;line-height:1.08}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 24px}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:.78rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--green-500);
+  background:rgba(31,138,91,.10);
+  padding:7px 14px;border-radius:100px;
+}
+.eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--lime);box-shadow:0 0 0 4px rgba(52,224,138,.25)}
+.btn{
+  display:inline-flex;align-items:center;gap:10px;
+  font-weight:600;font-size:1rem;
+  padding:15px 26px;border-radius:100px;border:none;cursor:pointer;
+  transition:transform .25s cubic-bezier(.2,.8,.2,1),box-shadow .25s,background .25s;
+}
+.btn-primary{background:var(--green-800);color:#fff;box-shadow:var(--shadow-sm)}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 22px 40px -16px rgba(14,59,44,.6);background:var(--green-700)}
+.btn-lime{background:var(--lime);color:var(--green-900)}
+.btn-lime:hover{transform:translateY(-3px);box-shadow:0 22px 40px -16px rgba(52,224,138,.7)}
+.btn-ghost{background:transparent;color:var(--green-800);border:1.5px solid rgba(14,59,44,.18)}
+.btn-ghost:hover{background:rgba(14,59,44,.06);transform:translateY(-3px)}
+.btn svg{width:18px;height:18px}
+
+/* NAV */
+header.nav{
+  position:fixed;top:0;left:0;right:0;z-index:50;
+  transition:background .3s,box-shadow .3s,padding .3s;
+  padding:18px 0;
+}
+header.nav.scrolled{
+  background:rgba(247,246,240,.82);
+  backdrop-filter:saturate(180%) blur(14px);
+  -webkit-backdrop-filter:saturate(180%) blur(14px);
+  box-shadow:0 1px 0 rgba(20,32,27,.07);
+  padding:12px 0;
+}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:24px}
+.logo{display:flex;align-items:center;gap:12px;font-family:'Space Grotesk';font-weight:700;font-size:1.18rem;color:var(--green-900)}
+.logo .mark{
+  width:40px;height:40px;border-radius:12px;
+  background:linear-gradient(135deg,var(--green-700),var(--green-900));
+  display:grid;place-items:center;color:var(--lime);box-shadow:var(--shadow-sm);flex:none;
+}
+.logo .mark svg{width:22px;height:22px}
+.logo small{display:block;font-family:'Inter';font-weight:500;font-size:.66rem;letter-spacing:.18em;color:var(--muted);text-transform:uppercase;margin-top:-2px}
+.nav-links{display:flex;align-items:center;gap:6px}
+.nav-links a.link{padding:9px 14px;border-radius:100px;font-weight:500;font-size:.95rem;color:var(--ink);transition:background .2s,color .2s}
+.nav-links a.link:hover{background:rgba(14,59,44,.07)}
+.nav-cta{display:flex;align-items:center;gap:10px;margin-left:8px}
+.burger{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:5px;padding:8px}
+.burger span{width:24px;height:2px;background:var(--green-900);border-radius:2px;transition:.3s}
+
+/* HERO */
+.hero{position:relative;padding:160px 0 90px;overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:0;pointer-events:none}
+.blob{position:absolute;border-radius:50%;filter:blur(70px);opacity:.55}
+.blob.b1{width:520px;height:520px;background:radial-gradient(circle,#bdf3d4,transparent 70%);top:-120px;right:-120px}
+.blob.b2{width:440px;height:440px;background:radial-gradient(circle,#d8f0c2,transparent 70%);bottom:-160px;left:-120px;opacity:.5}
+.grid-dots{position:absolute;inset:0;background-image:radial-gradient(rgba(14,59,44,.06) 1.4px,transparent 1.4px);background-size:26px 26px;mask-image:linear-gradient(180deg,#000,transparent 70%)}
+.hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.15fr .85fr;gap:54px;align-items:center}
+.hero h1{font-size:clamp(2.5rem,5.4vw,4.3rem);font-weight:700;color:var(--green-900);margin:22px 0 0}
+.hero h1 .hl{position:relative;color:var(--green-700);white-space:nowrap}
+.hero h1 .hl::after{content:"";position:absolute;left:0;right:0;bottom:.08em;height:.34em;background:var(--lime-soft);z-index:-1;border-radius:4px;opacity:.8}
+.hero p.lead{font-size:1.18rem;color:var(--muted);max-width:540px;margin:26px 0 34px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:14px}
+.hero-trust{display:flex;align-items:center;gap:22px;margin-top:38px;flex-wrap:wrap}
+.hero-trust .t{display:flex;align-items:center;gap:10px;font-size:.92rem;color:var(--muted);font-weight:500}
+.hero-trust svg{width:20px;height:20px;color:var(--green-500);flex:none}
+
+/* HERO CARD */
+.hero-card{
+  position:relative;background:var(--white);border-radius:var(--radius);
+  box-shadow:var(--shadow);padding:30px;border:1px solid rgba(14,59,44,.06);
+}
+.hero-card .photo{
+  height:230px;border-radius:16px;overflow:hidden;position:relative;
+  background:linear-gradient(135deg,var(--green-700),var(--green-900));
+}
+.hero-card .photo .scene{position:absolute;inset:0}
+.hero-card .photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero-card .photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(10,45,34,.55))}
+.hero-card .photo .tag{
+  position:absolute;left:16px;bottom:16px;background:rgba(255,255,255,.92);
+  backdrop-filter:blur(6px);padding:9px 14px;border-radius:100px;font-weight:600;font-size:.85rem;
+  display:flex;align-items:center;gap:8px;color:var(--green-900)
+}
+.hero-card .photo .tag .dot{width:8px;height:8px;border-radius:50%;background:var(--lime);box-shadow:0 0 0 4px rgba(52,224,138,.3)}
+.mini-stats{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:22px}
+.mini{background:var(--cream);border-radius:14px;padding:16px}
+.mini .n{font-family:'Space Grotesk';font-weight:700;font-size:1.7rem;color:var(--green-800)}
+.mini .l{font-size:.82rem;color:var(--muted);font-weight:500}
+
+/* MARQUEE / SECTORS */
+.sectors{padding:34px 0;border-top:1px solid rgba(14,59,44,.07);border-bottom:1px solid rgba(14,59,44,.07);background:var(--cream-2)}
+.sectors .wrap{display:flex;align-items:center;gap:18px;flex-wrap:wrap;justify-content:center}
+.sectors .label{font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.chip{display:inline-flex;align-items:center;gap:8px;background:var(--white);border:1px solid rgba(14,59,44,.08);padding:10px 18px;border-radius:100px;font-weight:600;font-size:.92rem;color:var(--green-800)}
+.chip svg{width:16px;height:16px;color:var(--green-500)}
+
+/* SECTION HEAD */
+section{padding:96px 0}
+.shead{max-width:680px;margin:0 auto 56px;text-align:center}
+.shead h2{font-size:clamp(2rem,4vw,3rem);font-weight:700;color:var(--green-900);margin:16px 0 14px}
+.shead p{font-size:1.1rem;color:var(--muted)}
+
+/* SERVICES */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{
+  background:var(--white);border-radius:var(--radius);padding:30px;
+  border:1px solid rgba(14,59,44,.06);box-shadow:var(--shadow-sm);
+  transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s;position:relative;overflow:hidden;
+}
+.card::before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(52,224,138,.10),transparent 55%);opacity:0;transition:opacity .3s}
+.card:hover{transform:translateY(-8px);box-shadow:var(--shadow)}
+.card:hover::before{opacity:1}
+.card .ico{
+  width:56px;height:56px;border-radius:16px;display:grid;place-items:center;
+  background:linear-gradient(135deg,var(--green-700),var(--green-900));color:var(--lime);
+  margin-bottom:20px;box-shadow:var(--shadow-sm);position:relative;z-index:1;
+}
+.card .ico svg{width:28px;height:28px}
+.card h3{font-size:1.28rem;color:var(--green-900);margin-bottom:10px;position:relative;z-index:1}
+.card p{color:var(--muted);font-size:.97rem;position:relative;z-index:1}
+
+/* SHOWCASE */
+.showcase{padding-top:20px}
+.showcase-grid{display:grid;grid-template-columns:1.3fr 1fr;grid-template-rows:1fr 1fr;gap:18px;height:480px}
+.showcase-grid figure{position:relative;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-sm);margin:0}
+.showcase-grid figure:first-child{grid-row:1 / span 2}
+.showcase-grid img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+.showcase-grid figure:hover img{transform:scale(1.06)}
+.showcase-grid figcaption{
+  position:absolute;left:14px;bottom:14px;z-index:2;color:#fff;font-weight:600;font-size:.95rem;
+  background:rgba(10,45,34,.5);backdrop-filter:blur(6px);padding:8px 14px;border-radius:100px;
+  display:flex;align-items:center;gap:8px
+}
+.showcase-grid figcaption::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--lime)}
+.showcase-grid figure::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(10,45,34,.4))}
+
+/* PROCESS */
+.process{background:var(--green-900);color:#fff;border-radius:40px;margin:0 24px;position:relative;overflow:hidden}
+.process .photo-bg{position:absolute;inset:0;z-index:0;opacity:.16}
+.process .photo-bg img{width:100%;height:100%;object-fit:cover}
+.process .wrap{position:relative;z-index:1}
+.process .blob{opacity:.25}
+.process .shead h2{color:#fff}
+.process .shead p{color:rgba(255,255,255,.7)}
+.process .shead .eyebrow{background:rgba(52,224,138,.15);color:var(--lime)}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.step{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:var(--radius);padding:30px;backdrop-filter:blur(4px);transition:transform .3s,background .3s}
+.step:hover{transform:translateY(-6px);background:rgba(255,255,255,.09)}
+.step .num{font-family:'Space Grotesk';font-weight:700;font-size:1.05rem;color:var(--green-900);background:var(--lime);width:42px;height:42px;border-radius:12px;display:grid;place-items:center;margin-bottom:18px}
+.step h3{font-size:1.25rem;margin-bottom:8px}
+.step p{color:rgba(255,255,255,.72);font-size:.96rem}
+
+/* WHY / STATS */
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:54px;align-items:center}
+.why-list{display:flex;flex-direction:column;gap:18px;margin-top:28px}
+.why-item{display:flex;gap:16px;align-items:flex-start}
+.why-item .tick{flex:none;width:40px;height:40px;border-radius:12px;background:rgba(31,138,91,.12);color:var(--green-500);display:grid;place-items:center}
+.why-item .tick svg{width:20px;height:20px}
+.why-item h4{font-family:'Space Grotesk';font-size:1.08rem;color:var(--green-900);margin-bottom:3px}
+.why-item p{color:var(--muted);font-size:.95rem}
+.stat-panel{background:linear-gradient(160deg,var(--green-700),var(--green-900));border-radius:var(--radius);padding:42px;color:#fff;box-shadow:var(--shadow)}
+.stat-panel .row{display:grid;grid-template-columns:1fr 1fr;gap:30px}
+.stat .n{font-family:'Space Grotesk';font-weight:700;font-size:2.8rem;color:var(--lime);line-height:1}
+.stat .l{color:rgba(255,255,255,.8);font-size:.95rem;margin-top:6px}
+.stat-panel hr{border:none;border-top:1px solid rgba(255,255,255,.14);margin:30px 0}
+
+/* CONTACT */
+.contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:40px;align-items:stretch}
+.contact-info{background:var(--green-900);color:#fff;border-radius:var(--radius);padding:42px;position:relative;overflow:hidden}
+.contact-info h3{font-size:1.7rem;margin-bottom:10px}
+.contact-info p.sub{color:rgba(255,255,255,.72);margin-bottom:30px}
+.cinfo-item{display:flex;gap:16px;align-items:center;padding:16px 0;border-top:1px solid rgba(255,255,255,.12)}
+.cinfo-item:first-of-type{border-top:none}
+.cinfo-item .ci{flex:none;width:46px;height:46px;border-radius:13px;background:rgba(52,224,138,.16);color:var(--lime);display:grid;place-items:center}
+.cinfo-item .ci svg{width:22px;height:22px}
+.cinfo-item .k{font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.6)}
+.cinfo-item .v{font-weight:600;font-size:1.05rem}
+.contact-form{background:var(--white);border-radius:var(--radius);padding:42px;box-shadow:var(--shadow-sm);border:1px solid rgba(14,59,44,.06)}
+.field{margin-bottom:18px}
+.field label{display:block;font-weight:600;font-size:.9rem;margin-bottom:7px;color:var(--green-900)}
+.field input,.field textarea{
+  width:100%;padding:14px 16px;border:1.5px solid rgba(14,59,44,.14);border-radius:14px;
+  font-family:inherit;font-size:1rem;background:var(--cream);transition:border .2s,box-shadow .2s;color:var(--ink)
+}
+.field input:focus,.field textarea:focus{outline:none;border-color:var(--green-500);box-shadow:0 0 0 4px rgba(31,138,91,.12);background:#fff}
+.field textarea{min-height:120px;resize:vertical}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+
+/* FOOTER */
+footer{background:var(--green-900);color:rgba(255,255,255,.75);padding:70px 0 30px;margin-top:96px}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.12)}
+.foot-grid .logo{color:#fff}
+.foot-grid .logo small{color:rgba(255,255,255,.55)}
+.foot-about{margin-top:18px;font-size:.95rem;max-width:340px}
+.foot-col h5{font-family:'Space Grotesk';color:#fff;font-size:1rem;margin-bottom:16px}
+.foot-col a,.foot-col p{display:block;font-size:.95rem;margin-bottom:10px;color:rgba(255,255,255,.72);transition:color .2s}
+.foot-col a:hover{color:var(--lime)}
+.foot-bottom{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding-top:24px;font-size:.85rem;color:rgba(255,255,255,.55)}
+.socials{display:flex;gap:10px}
+.socials a{width:38px;height:38px;border-radius:11px;background:rgba(255,255,255,.08);display:grid;place-items:center;color:#fff;transition:background .2s,transform .2s}
+.socials a:hover{background:var(--lime);color:var(--green-900);transform:translateY(-3px)}
+.socials svg{width:18px;height:18px}
+
+/* FAB */
+.fab{position:fixed;right:22px;bottom:22px;z-index:45;display:flex;flex-direction:column;gap:12px}
+.fab a{width:56px;height:56px;border-radius:50%;display:grid;place-items:center;box-shadow:var(--shadow);transition:transform .25s}
+.fab a:hover{transform:scale(1.08)}
+.fab .call{background:var(--green-800);color:#fff}
+.fab .wa{background:#25d366;color:#fff}
+.fab svg{width:26px;height:26px}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s cubic-bezier(.2,.8,.2,1),transform .7s cubic-bezier(.2,.8,.2,1)}
+.reveal.in{opacity:1;transform:none}
+.reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}.reveal.d4{transition-delay:.32s}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .hero-grid,.why-grid,.contact-grid,.foot-grid{grid-template-columns:1fr}
+  .cards,.steps{grid-template-columns:1fr 1fr}
+  .hero{padding-top:130px}
+  .hero-card{order:-1}
+  .nav-links{display:none}
+  .burger{display:flex}
+  .nav-links.open{
+    display:flex;flex-direction:column;align-items:stretch;gap:4px;
+    position:absolute;top:70px;left:16px;right:16px;background:#fff;
+    padding:14px;border-radius:18px;box-shadow:var(--shadow)
+  }
+  .nav-links.open .nav-cta{flex-direction:column;margin:8px 0 0}
+  .nav-links.open .btn{justify-content:center}
+}
+@media(max-width:560px){
+  .cards,.steps,.stat-panel .row,.form-row{grid-template-columns:1fr}
+  .process{margin:0 12px;border-radius:28px}
+  section{padding:70px 0}
+  .hero-trust{gap:14px}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a href="#home" class="logo">
+      <span class="mark">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6"/></svg>
+      </span>
+      <span>Good Jobs<small>SRLS · Piacenza</small></span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a class="link" href="#servizi">Servizi</a>
+      <a class="link" href="#metodo">Come lavoriamo</a>
+      <a class="link" href="#perche">Perché noi</a>
+      <a class="link" href="#contatti">Contatti</a>
+      <div class="nav-cta">
+        <a class="btn btn-primary" href="tel:+393351461347">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Chiama ora
+        </a>
+      </div>
+    </nav>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg">
+    <span class="blob b1"></span><span class="blob b2"></span>
+    <span class="grid-dots"></span>
+  </div>
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow reveal">Servizi operativi per aziende</span>
+      <h1 class="reveal d1">La <span class="hl">forza lavoro</span> giusta,<br/>quando ti serve.</h1>
+      <p class="lead reveal d2">Good Jobs SRLS organizza personale e squadre operative per attività agricole conto terzi, facchinaggio, logistica e pulizia. Affidabilità, puntualità e gestione pratica del cliente — interventi stagionali, continuativi o a chiamata.</p>
+      <div class="hero-actions reveal d3">
+        <a class="btn btn-lime" href="#contatti">
+          Richiedi un preventivo
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a class="btn btn-ghost" href="#servizi">Scopri i servizi</a>
+      </div>
+      <div class="hero-trust reveal d4">
+        <div class="t"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3"/></svg> Squadre selezionate</div>
+        <div class="t"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> Interventi puntuali</div>
+        <div class="t"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Conto terzi</div>
+      </div>
+    </div>
+
+    <div class="hero-card reveal d2">
+      <div class="photo">
+        <img src="images/forklift.jpg" alt="Operatore con muletto durante la movimentazione merci in magazzino" loading="eager" />
+        <div class="tag"><span class="dot"></span> Operativi sul territorio</div>
+      </div>
+      <div class="mini-stats">
+        <div class="mini"><div class="n" data-count="6">6</div><div class="l">aree di servizio</div></div>
+        <div class="mini"><div class="n">7/7</div><div class="l">su richiesta</div></div>
+        <div class="mini"><div class="n" data-count="100" data-suffix="%">100%</div><div class="l">conto terzi</div></div>
+        <div class="mini"><div class="n">PC</div><div class="l">e provincia</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTORS -->
+<div class="sectors">
+  <div class="wrap">
+    <span class="label">Settori serviti</span>
+    <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 22s4-10 10-10 10 10 10 10"/><path d="M12 12V2"/></svg> Agricoltura</span>
+    <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="13" rx="2"/><path d="M3 13h18M8 8V5h8v3"/></svg> Logistica</span>
+    <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg> Magazzino</span>
+    <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M3 12h18M3 18h12"/></svg> Pulizie</span>
+    <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l19-9-9 19-2-8-8-2z"/></svg> Volantinaggio</span>
+  </div>
+</div>
+
+<!-- SERVIZI -->
+<section id="servizi">
+  <div class="wrap">
+    <div class="shead">
+      <span class="eyebrow reveal">Cosa facciamo</span>
+      <h2 class="reveal d1">Servizi operativi su misura</h2>
+      <p class="reveal d2">Un unico partner per la manodopera e il supporto operativo della tua azienda. Selezioniamo e coordiniamo le squadre; tu pensi al tuo business.</p>
+    </div>
+    <div class="cards">
+      <div class="card reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 22s4-10 10-10 10 10 10 10"/><path d="M12 12V2M12 7c2 0 4-2 4-4-2 0-4 2-4 4zM12 7c-2 0-4-2-4-4 2 0 4 2 4 4z"/></svg></div>
+        <h3>Attività agricole conto terzi</h3>
+        <p>Manodopera qualificata per raccolta, lavorazioni stagionali e supporto nei campi, con squadre organizzate secondo le esigenze della campagna.</p>
+      </div>
+      <div class="card reveal d1">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 16h2a2 2 0 0 0 2-2V7l-3-3H4v12h2"/><circle cx="8" cy="18" r="2"/><circle cx="16" cy="18" r="2"/></svg></div>
+        <h3>Facchinaggio</h3>
+        <p>Servizi di facchinaggio per traslochi, carico/scarico e movimentazioni interne, con personale affidabile e attento ai tempi del cliente.</p>
+      </div>
+      <div class="card reveal d2">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="M3.27 6.96 12 12.01l8.73-5.05M12 22.08V12"/></svg></div>
+        <h3>Movimentazione merci</h3>
+        <p>Gestione e movimentazione delle merci in magazzino e in produzione: smistamento, allestimento ordini e supporto ai flussi logistici.</p>
+      </div>
+      <div class="card reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V10l4-2 4 2v11M13 21V8l6-3v16"/></svg></div>
+        <h3>Pulizia aree agricole</h3>
+        <p>Pulizia e manutenzione di aree agricole e spazi esterni, per mantenere terreni e ambienti di lavoro ordinati, sicuri ed efficienti.</p>
+      </div>
+      <div class="card reveal d1">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 7l10-5 10 5M4 7v10a8 8 0 0 0 16 0V7"/></svg></div>
+        <h3>Supporto logistico</h3>
+        <p>Supporto operativo continuativo o a chiamata per coprire picchi di lavoro, sostituzioni e progetti specifici con squadre pronte all'intervento.</p>
+      </div>
+      <div class="card reveal d2">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l19-9-9 19-2-8-8-2z"/></svg></div>
+        <h3>Distribuzione materiale pubblicitario</h3>
+        <p>Volantinaggio e distribuzione capillare di materiale pubblicitario sul territorio, con personale organizzato per zone e tempistiche.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SHOWCASE -->
+<section class="showcase">
+  <div class="wrap">
+    <div class="shead" style="margin-bottom:40px">
+      <span class="eyebrow reveal">Sul campo</span>
+      <h2 class="reveal d1">La nostra operatività</h2>
+      <p class="reveal d2">Muletti, magazzino e movimentazione merci: squadre attrezzate e pronte a intervenire dove serve.</p>
+    </div>
+    <div class="showcase-grid reveal d1">
+      <figure><img src="images/forklift2.jpg" alt="Muletto al lavoro nel deposito" loading="lazy" /><figcaption>Movimentazione con muletto</figcaption></figure>
+      <figure><img src="images/warehouse.jpg" alt="Magazzino logistico" loading="lazy" /><figcaption>Logistica di magazzino</figcaption></figure>
+      <figure><img src="images/warehouse2.jpg" alt="Gestione merci in magazzino" loading="lazy" /><figcaption>Gestione merci</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process" id="metodo">
+  <div class="photo-bg"><img src="images/warehouse.jpg" alt="" loading="lazy" /></div>
+  <div class="hero-bg"><span class="blob b1"></span></div>
+  <div class="wrap">
+    <div class="shead">
+      <span class="eyebrow reveal">Come lavoriamo</span>
+      <h2 class="reveal d1">Semplice, rapido, affidabile</h2>
+      <p class="reveal d2">Dalla richiesta all'intervento sul campo in tre passaggi, con una gestione del cliente pratica e diretta.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal">
+        <div class="num">01</div>
+        <h3>Richiesta e preventivo</h3>
+        <p>Ci racconti l'esigenza — periodo, volumi, tipo di intervento. Valutiamo e ti rispondiamo con un preventivo chiaro e senza impegno.</p>
+      </div>
+      <div class="step reveal d1">
+        <div class="num">02</div>
+        <h3>Selezione della squadra</h3>
+        <p>Selezioniamo e organizziamo il personale adatto al lavoro, coordinando team e tempistiche in base alle tue necessità.</p>
+      </div>
+      <div class="step reveal d2">
+        <div class="num">03</div>
+        <h3>Intervento operativo</h3>
+        <p>La squadra opera sul posto con puntualità e affidabilità, per interventi stagionali, continuativi o a chiamata.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PERCHE -->
+<section id="perche">
+  <div class="wrap why-grid">
+    <div>
+      <span class="eyebrow reveal">Perché Good Jobs</span>
+      <h2 class="reveal d1" style="font-size:clamp(2rem,4vw,2.8rem);color:var(--green-900);margin:16px 0 10px;font-family:'Space Grotesk';font-weight:700;letter-spacing:-.02em">Un partner operativo<br/>su cui contare davvero</h2>
+      <p class="reveal d2" style="color:var(--muted);font-size:1.08rem">Mettiamo al centro puntualità, affidabilità e una gestione pratica del cliente. La nostra struttura coordina direzione, squadre di lavoro e assistenza per garantire interventi sempre all'altezza.</p>
+      <div class="why-list">
+        <div class="why-item reveal">
+          <span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+          <div><h4>Puntualità garantita</h4><p>Rispettiamo tempi e scadenze concordate, perché sappiamo che il lavoro non aspetta.</p></div>
+        </div>
+        <div class="why-item reveal d1">
+          <span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+          <div><h4>Personale selezionato</h4><p>Squadre organizzate e affidabili, scelte in base al tipo di intervento richiesto.</p></div>
+        </div>
+        <div class="why-item reveal d2">
+          <span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+          <div><h4>Flessibilità totale</h4><p>Interventi stagionali, continuativi o a chiamata, modellati sulle tue necessità.</p></div>
+        </div>
+        <div class="why-item reveal d3">
+          <span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+          <div><h4>Gestione pratica del cliente</h4><p>Un riferimento diretto per richieste, preventivi e pianificazione degli interventi.</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="stat-panel reveal d1">
+      <div class="row">
+        <div class="stat"><div class="n" data-count="6">6</div><div class="l">aree di servizio coperte</div></div>
+        <div class="stat"><div class="n" data-count="100" data-suffix="%">100%</div><div class="l">attività conto terzi</div></div>
+      </div>
+      <hr/>
+      <div class="row">
+        <div class="stat"><div class="n">PC</div><div class="l">Piacenza e provincia</div></div>
+        <div class="stat"><div class="n">7/7</div><div class="l">disponibilità su richiesta</div></div>
+      </div>
+      <hr/>
+      <p style="color:rgba(255,255,255,.85);font-size:1.05rem">«Organizziamo personale e squadre di lavoro per interventi stagionali, continuativi o a chiamata, con attenzione a puntualità e affidabilità.»</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTATTI -->
+<section id="contatti">
+  <div class="wrap">
+    <div class="shead">
+      <span class="eyebrow reveal">Contatti</span>
+      <h2 class="reveal d1">Parliamo del tuo progetto</h2>
+      <p class="reveal d2">Raccontaci di cosa hai bisogno: ti rispondiamo con un preventivo su misura, senza impegno.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <div class="hero-bg"><span class="blob b1" style="opacity:.2"></span></div>
+        <div style="position:relative;z-index:1">
+          <h3>Good Jobs SRLS</h3>
+          <p class="sub">Servizi operativi per aziende — Piacenza, Parma e provincia.</p>
+          <a class="cinfo-item" href="tel:+393351461347">
+            <span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+            <span><span class="k">Telefono</span><span class="v">335 146 1347</span></span>
+          </a>
+          <a class="cinfo-item" href="mailto:alessia@coop-goodjob.com">
+            <span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></span>
+            <span><span class="k">Email</span><span class="v">alessia@coop-goodjob.com</span></span>
+          </a>
+          <div class="cinfo-item">
+            <span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+            <span><span class="k">Sede di Piacenza</span><span class="v">Via Dei Ripalta 29, 29122 Piacenza (PC)</span></span>
+          </div>
+          <div class="cinfo-item">
+            <span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+            <span><span class="k">Sede di Salsomaggiore (PR)</span><span class="v">Via Don Minzoni 3, 43039 Salsomaggiore Terme (PR)</span></span>
+          </div>
+          <div class="cinfo-item">
+            <span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h18M9 21V9M3 5h18v16H3z"/></svg></span>
+            <span><span class="k">P.IVA / C.F. · REA PC</span><span class="v">01891350330 · 357808</span></span>
+          </div>
+        </div>
+      </div>
+      <form class="contact-form reveal d1" action="mailto:alessia@coop-goodjob.com" method="post" enctype="text/plain">
+        <div class="form-row">
+          <div class="field"><label for="nome">Nome e cognome</label><input id="nome" name="nome" type="text" placeholder="Mario Rossi" required /></div>
+          <div class="field"><label for="azienda">Azienda</label><input id="azienda" name="azienda" type="text" placeholder="La tua azienda" /></div>
+        </div>
+        <div class="form-row">
+          <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" placeholder="nome@email.it" required /></div>
+          <div class="field"><label for="tel">Telefono</label><input id="tel" name="telefono" type="tel" placeholder="335 000 0000" /></div>
+        </div>
+        <div class="field"><label for="msg">Di cosa hai bisogno?</label><textarea id="msg" name="messaggio" placeholder="Descrivi il servizio che ti serve, il periodo e i volumi..." required></textarea></div>
+        <button class="btn btn-primary" type="submit" style="width:100%;justify-content:center">
+          Invia richiesta
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+        </button>
+        <p style="font-size:.82rem;color:var(--muted);margin-top:14px;text-align:center">Inviando accetti di essere contattato in merito alla tua richiesta.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a href="#home" class="logo">
+          <span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6"/></svg></span>
+          <span>Good Jobs<small>SRLS · Piacenza</small></span>
+        </a>
+        <p class="foot-about">Servizi operativi e manodopera per aziende: attività agricole conto terzi, facchinaggio, logistica, pulizia aree agricole e distribuzione materiale pubblicitario.</p>
+        <div class="socials" style="margin-top:18px">
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+          <a href="mailto:alessia@coop-goodjob.com" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></a>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h5>Servizi</h5>
+        <a href="#servizi">Attività agricole</a>
+        <a href="#servizi">Facchinaggio</a>
+        <a href="#servizi">Movimentazione merci</a>
+        <a href="#servizi">Pulizia aree agricole</a>
+        <a href="#servizi">Supporto logistico</a>
+        <a href="#servizi">Volantinaggio</a>
+      </div>
+      <div class="foot-col">
+        <h5>Contatti</h5>
+        <a href="tel:+393351461347">335 146 1347</a>
+        <a href="mailto:alessia@coop-goodjob.com">alessia@coop-goodjob.com</a>
+        <p><strong style="color:#fff">Sede Piacenza</strong><br/>Via Dei Ripalta 29<br/>29122 Piacenza (PC)</p>
+        <p><strong style="color:#fff">Sede Salsomaggiore</strong><br/>Via Don Minzoni 3<br/>43039 Salsomaggiore Terme (PR)</p>
+        <p>P.IVA 01891350330</p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="year">2026</span> Good Jobs SRLS · P.IVA 01891350330 · REA PC 357808</span>
+      <span>Tutti i diritti riservati.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- FAB -->
+<div class="fab">
+  <a class="wa" href="https://wa.me/393351461347" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 0 1 8.413 3.488 11.82 11.82 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.513 5.26l-.999 3.648 3.975-1.715zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/></svg></a>
+  <a class="call" href="tel:+393351461347" aria-label="Chiama"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></a>
+</div>
+
+<script>
+// nav scroll state
+const nav=document.getElementById('nav');
+addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>20));
+// mobile menu
+const burger=document.getElementById('burger'),links=document.getElementById('navLinks');
+burger.addEventListener('click',()=>links.classList.toggle('open'));
+links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));
+// year
+document.getElementById('year').textContent=new Date().getFullYear();
+// reveal on scroll
+const io=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.14});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+// count up
+const countIO=new IntersectionObserver((es)=>es.forEach(e=>{
+  if(!e.isIntersecting)return;
+  const el=e.target,target=+el.dataset.count,suffix=el.dataset.suffix||'';
+  let n=0;const step=Math.max(1,Math.round(target/40));
+  const t=setInterval(()=>{n+=step;if(n>=target){n=target;clearInterval(t)}el.textContent=n+suffix},22);
+  countIO.unobserve(el);
+}),{threshold:.6});
+document.querySelectorAll('[data-count]').forEach(el=>countIO.observe(el));
+</script>
+</body>
+</html>
